@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => res.render('home', {
     title: 'Book Search',
+    script: 'search-books'
 }));
 
 const PORT = process.env.PORT || 9000
