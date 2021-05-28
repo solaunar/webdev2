@@ -33,13 +33,14 @@ footer{
     flex-direction: column;
     background-color: rgb(212, 0, 255);
     font-size: 2rem;
-    position: fixed;
     padding: 1%;
     width: 100%;
+    position: fixed;
     bottom: 0;
+    margin-top: 1%;
 }
 input{
-    width: 50%;
+    width: 90%;
     height: 2rem;
     border-radius: 3%;
     border: 0.2vh solid rgb(0, 128, 107);
@@ -57,4 +58,25 @@ input{
     border: 0.2vh solid rgb(0, 128, 107);
     background-color: rgb(212, 0, 255);
     color: whitesmoke;
+}
+#results{
+    margin: 2%;
+}
+li{
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: left;
+}
+.search{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+.book-results{
+    border-style: double;
+    margin-bottom: 1%;
+}
+ul{
+    list-style-type: none;
 }
