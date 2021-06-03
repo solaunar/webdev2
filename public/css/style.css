@@ -51,7 +51,7 @@ input{
     background-color: whitesmoke;
 }
 #search-button{
-    width: 5%;
+    width: 10%;
     height: 2rem;
     border-radius: 3%;
     font-size: 1.5rem;
@@ -60,13 +60,14 @@ input{
     color: whitesmoke;
 }
 #results{
+    display: flex;
+    flex-direction: column;
     margin: 2%;
 }
 li{
     font-size: 1.5rem;
     font-weight: 200;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 2%;
     text-align: left;
 }
 .search{
@@ -76,6 +77,8 @@ li{
 .book-results{
     border-style: double;
     margin-bottom: 1%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 ul{
     list-style-type: none;

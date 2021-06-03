@@ -4,10 +4,8 @@ const randomhouseWorkURI = "https://reststop.randomhouse.com/resources/works/";
 const search_input = document.getElementById("search-input");
 const search_button = document.getElementById("search-button");
 const resultsDOM = document.getElementById("results");
-console.log(resultsDOM);
-//if(search_button){
-//    console.log(search_button);
-//}
+//console.log(resultsDOM);
+
 function fetchRelevantBookData(){
     var user_term_search = search_input.value;
     console.log(user_term_search);
@@ -23,9 +21,14 @@ function fetchRelevantBookData(){
 }
 
 function showBookData(data){
-    for (let book of data.work) {
-        var bookHTML = `<li id="${data.workid}-book">
-            <ul class = "book-results">
+    if (data.work === undefined){
+        resultsDOM.innerHTML = `<h2>We're sorry! :( We could not find any books for that search.</h2>`
+    }
+    else if (!data["work"].length){
+        var book = data["work"];
+        resultsDOM.innerHTML = `<h2>Here are your results kind user!</h2>`
+        var bookHTML = `
+            <ul class = "book-results" id="${book.workid}-book">
                 <li>
                     ID: ${book.workid}
                 </li>
@@ -41,5 +44,27 @@ function showBookData(data){
             </ul>`;
         resultsDOM.innerHTML += bookHTML;
     }
-    document.getElementById("footer").style.position="relative";
+    else{
+        
+        resultsDOM.innerHTML = `<h2>Here are your results kind user!</h2>`
+        for (let book of data.work) {
+            var bookHTML = `
+                <ul class = "book-results" id="${book.workid}-book">
+                    <li>
+                        ID: ${book.workid}
+                    </li>
+                    <li>
+                        Title: ${book.titleweb}
+                    </li>
+                    <li>
+                        Author:  ${book.authorweb}
+                    </li>
+                    <li>
+                        Series: ${book.series}
+                    </li>
+                </ul>`;
+            resultsDOM.innerHTML += bookHTML;
+        }
+        document.getElementById("footer").style.position="relative";
+    }
 }
