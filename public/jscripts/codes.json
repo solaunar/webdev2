@@ -1,0 +1,6 @@
+{
+    "serverSaveFail": "saveFail",
+    "serverSaveSuccess": "saveSuccess",
+    "serverDeleteFail": "deleteFail",
+    "serverDeleteSuccess": "deleteSuccess"
+}

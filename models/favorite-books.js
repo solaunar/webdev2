@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const fbooksSchema = new Schema({
     workid: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     titleweb: {
         type: String,
@@ -17,6 +18,9 @@ const fbooksSchema = new Schema({
     series: {
         type: String,
         required: false
+    },
+    comments:{
+        type: String
     }
 });
 

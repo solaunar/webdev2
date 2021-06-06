@@ -79,6 +79,17 @@ li{
     margin-bottom: 1%;
     margin-left: 25%;
     margin-right: 25%;
+    padding: 1%;
+}
+.favorite-save-btn, .favorite-delete-btn{
+    margin-top: 1%;
+    width: 50%;
+    height: 2rem;
+    border-radius: 3%;
+    font-size: 1.5rem;
+    border: 0.2vh solid rgb(0, 128, 107);
+    background-color: rgb(212, 0, 255);
+    color: whitesmoke;
 }
 ul{
     list-style-type: none;
