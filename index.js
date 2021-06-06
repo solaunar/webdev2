@@ -29,6 +29,14 @@ app.get('/home', (req, res) =>{
     });
 });
 
+//render the favoritespage
+app.get('/favoritebooks', (req, res) =>{
+    res.render('favoritebooks', {
+        title: 'Favorite Books',
+        script: 'get-favorites'
+    });
+});
+
 //define a connection port
 const PORT = process.env.PORT || 9000
 

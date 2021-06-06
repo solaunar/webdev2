@@ -20,7 +20,7 @@ function fetchRelevantBookData(){
 
 function showBookData(data){
     if (data.work === undefined){
-        resultsDOM.innerHTML = `<h2>We're sorry! :( We could not find any books for that search.</h2>`
+        resultsDOM.innerHTML = `<h2>We're sorry! :( We could not find any favorite books for that filter.</h2>`
     }
     else if (!data["work"].length){
         var book = data["work"];
@@ -38,6 +38,12 @@ function showBookData(data){
                 </li>
                 <li>
                     Series: ${book.series}
+                </li>
+                <li>
+                <button type="button" class = "favorite-edit-btn" onclick="editBook(${book.workid})" >Add to favorites</button>
+                <button type="button" class = "favorite-delete-btn" onclick="deleteBook(${book.workid})" >Remove from favorites</button>
+                </li>
+                <li id= "${book.workid}-favorite-message" class ="favorite-message">
                 </li>
             </ul>`;
         resultsDOM.innerHTML += bookHTML;
@@ -60,6 +66,7 @@ function showBookData(data){
                         Series: ${book.series}
                     </li>
                     <li>
+                    <button type="button" class = "favorite-edit-btn" onclick="editBook(${book.workid})" >Add to favorites</button>
                     <button type="button" class = "favorite-delete-btn" onclick="deleteBook(${book.workid})" >Remove from favorites</button>
                     </li>
                     <li id= "${book.workid}-favorite-message">
