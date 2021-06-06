@@ -91,6 +91,13 @@ li{
     background-color: rgb(212, 0, 255);
     color: whitesmoke;
 }
+.favorite-message{
+    background-color: rgb(113, 0, 136);
+    color: whitesmoke;
+    border-style: double;
+    margin: 1%;
+    padding: 1%;
+}
 ul{
     list-style-type: none;
 }

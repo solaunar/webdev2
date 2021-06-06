@@ -63,7 +63,7 @@ app.post('/home', async (req, res) => {
 
 app.delete('/home', async (req, res) => {
     var bookData = req.body.data;
-    await FBook.deleteOne({workid: bookData.workid}), err => {
+    await FBook.deleteOne({workid: bookData.workid}, err => {
         err ? res.send({serverRes:codes.serverDeleteFail}) : res.send({serverRes:codes.serverDeleteSuccess})
-    }
-})
+    });
+});

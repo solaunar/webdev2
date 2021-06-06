@@ -1,6 +1,5 @@
 const randomhouseSearchWorkURI = "https://reststop.randomhouse.com/resources/works?search=";
 const randomhouseWorkURI = "https://reststop.randomhouse.com/resources/works/"; 
-
 const search_input = document.getElementById("search-input");
 const search_button = document.getElementById("search-button");
 const resultsDOM = document.getElementById("results");
@@ -68,7 +67,7 @@ function showBookData(data){
                     <button type="button" class = "favorite-save-btn" onclick="saveBook(${book.workid})" >Add to favorites</button>
                     <button type="button" class = "favorite-delete-btn" onclick="deleteBook(${book.workid})" >Remove from favorites</button>
                     </li>
-                    <li id= "${book.workid}-favorite-message">
+                    <li id= "${book.workid}-favorite-message" class ="favorite-message">
                     </li>
                 </ul>`;
             resultsDOM.innerHTML += bookHTML;
@@ -143,7 +142,7 @@ function requestFavorite(book, request){
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            //console.log(data);
             if(data.serverRes === "deleteFail"){
                 favorite_message.innerHTML = "You probably haven't saved this book to your favorites yet.";
             }
