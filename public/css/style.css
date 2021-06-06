@@ -29,6 +29,7 @@ main{
     margin-top: 2%;
 }
 footer{
+    clear: both;
     display: flex;
     flex-direction: column;
     background-color: rgb(212, 0, 255);
@@ -37,7 +38,6 @@ footer{
     width: 100%;
     position: fixed;
     bottom: 0;
-    margin-top: 1%;
 }
 input{
     width: 90%;
@@ -91,12 +91,16 @@ li{
     background-color: rgb(212, 0, 255);
     color: whitesmoke;
 }
-.favorite-message{
+.favorite-message, #update-message{
     background-color: rgb(113, 0, 136);
     color: whitesmoke;
     border-style: double;
     margin: 1%;
     padding: 1%;
+    display: none;
+}
+#update-message{
+    font-size: 1.5rem;
 }
 #goToFavorites{
     position: fixed;
@@ -120,4 +124,25 @@ a{
 .hint{
     font-weight: 100;
     font-size: larger;
+}
+.edit-book-form{
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.edit-book-form label{
+    text-align: left;
+    font-size: 1.5rem;
+}
+.edit-book-form input, textarea{
+    font-size: 1.4rem;
+    text-align: left;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    width: 100%;
+    padding: 0.5%;
+    border-radius: 3%;
+    resize: none;
 }

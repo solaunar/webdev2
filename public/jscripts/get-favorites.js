@@ -76,6 +76,11 @@ function deleteBook(bookid){
         else if(data.serverRes === "deleteSuccess"){
             favorite_message.innerHTML = "Book removed from favorites!";
         }
+        favorite_message.style.display = "inherit";
     })
     .catch(err => console.log(err));
+}
+
+function editBook(bookid){
+    window.location.href = '/editbook'+bookid;
 }

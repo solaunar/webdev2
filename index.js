@@ -37,6 +37,25 @@ app.get('/favoritebooks', (req, res) =>{
     });
 });
 
+//render an edit book page
+app.get('/editbook:bookid', (req, res) => {
+    FBook.findOne({
+        workid: req.params.bookid
+    }, (err, fBook) => {
+        console.log(fBook);
+        err ? res.send({ serverRes: codes.serverBookEditPageFail }) :
+            res.render('editbook', {
+                title: 'Edit book',
+                script: 'edit-book',
+                workid: fBook.workid,
+                titleweb: fBook.titleweb,
+                authorweb: fBook.authorweb,
+                series: fBook.series,
+                comments: fBook.comments
+            })
+    });
+});
+
 //define a connection port
 const PORT = process.env.PORT || 9000
 
@@ -98,4 +117,19 @@ app.delete('/favoritebooks', async (req, res) => {
     await FBook.deleteOne({workid: bookid}, err => {
         err ? res.send({serverRes:codes.serverDeleteFail}) : res.send({serverRes:codes.serverDeleteSuccess})
     });
+});
+
+app.put('/editbook:bookid', async (req, res)=>{
+    var bookData = req.body.data;
+    console.log(bookData);
+    await FBook.updateOne({workid: bookData.workid},{
+                $set: {
+                    titleweb: bookData.titleweb,
+                    authorweb: bookData.authorweb,
+                    series: bookData.series,
+                    comments: bookData.comments
+                }
+            }, err =>{
+                err ? res.send({serverRes:codes.serverBookEditFail}) : res.send({serverRes:codes.serverBookEditSuccess});
+            });
 });

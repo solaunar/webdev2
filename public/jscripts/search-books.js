@@ -133,6 +133,7 @@ function requestFavorite(book, request){
             else if(data.serverRes === "saveSuccess"){
                 favorite_message.innerHTML = "Book saved to favorites!";
             }
+            favorite_message.style.display = "inherit";
         })
         .catch(err => console.log(err));
     }
@@ -155,6 +156,7 @@ function requestFavorite(book, request){
             else if(data.serverRes === "deleteSuccess"){
                 favorite_message.innerHTML = "Book removed from favorites!";
             }
+            favorite_message.style.display = "inherit";
         })
         .catch(err => console.log(err));
     }

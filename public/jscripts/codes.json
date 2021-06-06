@@ -3,5 +3,8 @@
     "serverSaveSuccess": "saveSuccess",
     "serverDeleteFail": "deleteFail",
     "serverDeleteSuccess": "deleteSuccess",
-    "serverFilterFail": "filterFail"
+    "serverFilterFail": "filterFail",
+    "serverBookEditPageFail": "Error, favorite book could not be retrieved from database.",
+    "serverBookEditFail": "editFail",
+    "serverBookEditSuccess": "editSuccess"
 }

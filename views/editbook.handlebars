@@ -1,0 +1,17 @@
+<main>
+    <h1>Edit this book!</h1>
+    <form class="edit-book-form">
+        <label for="workid">WORKID</label>
+        <input id="workid" type="text"  value="{{workid}}" placeholder="Change work" readonly></input>
+        <label for="titleweb">Title</label>
+        <input id="titleweb" type="text"  value="{{titleweb}}" placeholder="Change the book title."></input>
+        <label for="authorweb">Author</label>
+        <input id="authorweb" type="text" value="{{authorweb}}" placeholder="Change the book author." ></input>
+        <label for="series">Series</label>
+        <input id="series" type="text"  value="{{series}}" placeholder="Change the book series."></input>
+        <label for="comments">Comments</label>
+        <textarea id="comments"  rows="3">{{comments}}</textarea>
+        <button type="button" class = "favorite-edit-btn" onclick="updateBook()" >Apply Changes</button>
+    </form>
+    <p id = "update-message"></p>
+</main>
