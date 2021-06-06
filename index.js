@@ -69,9 +69,33 @@ app.post('/home', async (req, res) => {
     });
 });
 
+//handle post requests for delete from client at home page
 app.delete('/home', async (req, res) => {
     var bookData = req.body.data;
     await FBook.deleteOne({workid: bookData.workid}, err => {
+        err ? res.send({serverRes:codes.serverDeleteFail}) : res.send({serverRes:codes.serverDeleteSuccess})
+    });
+});
+
+//handle filter requests at favorites page
+app.post('/favoritebooks', async (req, res)=>{
+    var filterTerm = req.body.filter;
+    //console.log(filterTerm);
+    await FBook.find({
+        $or: [
+            {titleweb: { $regex: new RegExp(filterTerm, "i")}},
+            {authorweb: { $regex: new RegExp(filterTerm, "i")}},
+        ]
+    }, (err, fBookList) =>{
+        //console.log(fBookList);
+        err || fBookList.length === 0?  res.send({serverRes:codes.serverFilterFail}) : res.send(fBookList);
+    });
+});
+
+//handle post requests for delete from client at book favorite page
+app.delete('/favoritebooks', async (req, res) => {
+    var bookid = req.body.data;
+    await FBook.deleteOne({workid: bookid}, err => {
         err ? res.send({serverRes:codes.serverDeleteFail}) : res.send({serverRes:codes.serverDeleteSuccess})
     });
 });

@@ -2,5 +2,6 @@
     "serverSaveFail": "saveFail",
     "serverSaveSuccess": "saveSuccess",
     "serverDeleteFail": "deleteFail",
-    "serverDeleteSuccess": "deleteSuccess"
+    "serverDeleteSuccess": "deleteSuccess",
+    "serverFilterFail": "filterFail"
 }
