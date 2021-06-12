@@ -21,15 +21,13 @@ and managing the favorites list (filtering list results, editing book data, remo
 ## Usage
 1. Open any browser (preferably Opera).
 2. Type the address bellow at the browser's address bar:
-  ```
-  localhost:9000/
-  ```
-3. You're ready to go!
+   ```sh
+   localhost:9000/
+   ```
+3. You're all set!
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## Licence
 [MIT](https://choosealicense.com/licenses/mit/)
