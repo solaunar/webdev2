@@ -32,3 +32,6 @@ This section should list any major frameworks that you built your project using.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+## Licence
+[MIT](https://choosealicense.com/licenses/mit/)
