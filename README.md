@@ -4,8 +4,6 @@ Implemented a book search webpage using the [Penguin Random House](https://www.p
 and managing the favorites list (filtering list results, editing book data, removing books from the list). The favorites list is stored at a remote database ([MongoDB](mongodb.com)).
 
 ### Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [NodeJS](https://nodejs.org/en/)
 * [Express](https://expressjs.com)
 * [Handlebars](https://handlebarsjs.com/guide/)
